@@ -1,5 +1,6 @@
 package org.apache.camel.component.stomp;
 
+import net.ser1.stomp.Client;
 import org.apache.camel.Exchange;
 import org.apache.camel.Message;
 import org.apache.camel.builder.RouteBuilder;
@@ -16,6 +17,12 @@ import java.util.Map;
  */
 public class StompProducerTest extends CamelTestSupport {
 
+    @Test
+    @Ignore("Manual test")
+    public void testClientFailover() throws Exception {
+        StompEndpoint stompEndpoint = resolveMandatoryEndpoint("stomp://localhost:7000/queue/testestomp", StompEndpoint.class);
+        Client c = stompEndpoint.getClient();
+    }
 
     @Test
     @Ignore("Manual test")

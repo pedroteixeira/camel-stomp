@@ -26,3 +26,9 @@ when having a separate a Spring 'bean' definition:
 
 == TODO
 Implement stomp consumer
+
+
+
+== References
+This project is a wrapper for the following java stomp library:
+http://trac.germane-software.com/Gozirra
