@@ -27,13 +27,11 @@ public class StompProducer extends DefaultProducer {
     public void process(final Exchange exchange) throws Exception {
         final String msg = exchange.getIn().getBody(String.class);
 
-        //send header exchange.getIn().getHeaders();?
-
         if (LOG.isDebugEnabled()) {
             LOG.debug("Sending to " + config.getDestination() + " msg: " + msg + " | " + exchange.getIn().getHeaders());
         }
 
-        client.send(config.getDestination(), msg);
+        client.send(config.getDestination(), msg, exchange.getIn().getHeaders());
     }
 
 

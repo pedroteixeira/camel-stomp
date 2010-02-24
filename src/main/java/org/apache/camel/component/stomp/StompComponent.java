@@ -14,6 +14,7 @@ import java.util.Map;
  */
 public class StompComponent extends DefaultComponent {
 
+
     private StompConfiguration config;
 
     public StompComponent() {
@@ -39,5 +40,10 @@ public class StompComponent extends DefaultComponent {
         return endpoint;
     }
 
-    
+
+    public void setConfig(StompConfiguration config) {
+        this.config = config;
+    }
+
+
 }
