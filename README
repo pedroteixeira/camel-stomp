@@ -1,0 +1,28 @@
+
+Amazingly enough, there was no stomp camel endpoint. Until now :)
+
+
+== USAGE
+A sample URI is:
+"stomp://[host]:[port]/[destination]"
+
+
+One can also use:
+"stomp:[destination]"
+
+when having a separate a Spring 'bean' definition:
+
+<bean id="stomp" class="org.apache.camel.component.stomp.StompComponent">
+        <property name="config">
+            <bean class="org.apache.camel.component.stomp.StompConfiguration">
+                <property name="hostname" value="${storage.stomp.hostname}"/>
+                <property name="port" value="${storage.stomp.port}"/>
+                <property name="username" value="${storage.stomp.username}"/>
+                <property name="password" value="${storage.stomp.password}"/>
+            </bean>
+        </property>
+    </bean>
+
+
+== TODO
+Implement stomp consumer
